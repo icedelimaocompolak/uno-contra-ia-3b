@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UNO VS IA</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>🃏 UNO VS IA</h1>
+        <div class="turn-info" id="turnInfo">
+            Sua vez!
+        </div>
+    </header>
+
+    <main class="game-container">
+
+        <!-- ADVERSÁRIO -->
+        <section class="opponent">
+
+            <div class="avatar">🤖</div>
+
+            <div class="player-info">
+                <h2>Computador</h2>
+                <p>Cartas: <span id="aiCount">7</span></p>
+            </div>
+
+            <div class="opponent-cards" id="aiCards">
+            </div>
+
+        </section>
+
+        <!-- MESA -->
+        <section class="table">
+
+            <div class="deck-area">
+
+                <div class="deck">
+                    <div class="card-back">UNO</div>
+                    <p>Comprar</p>
+                </div>
+
+                <div class="discard-area">
+                    <div id="topCard"></div>
+                    <p>Descarte</p>
+                </div>
+
+            </div>
+
+            <div class="game-message" id="gameMessage">
+                Escolha uma carta para jogar!
+            </div>
+
+            <div class="color-picker" id="colorPicker">
+                <p>Escolha uma cor:</p>
+                <button data-color="red" class="red"></button>
+                <button data-color="blue" class="blue"></button>
+                <button data-color="green" class="green"></button>
+                <button data-color="yellow" class="yellow"></button>
+            </div>
+
+        </section>
+
+        <!-- JOGADOR -->
+        <section class="player">
+
+            <div class="player-info">
+                <div class="avatar">😎</div>
+                <h2>Você</h2>
+                <p>Cartas: <span id="playerCount">7</span></p>
+            </div>
+
+            <div class="player-cards" id="playerCards">
+            </div>
+
+            <button id="drawButton" class="draw-button">
+                + COMPRAR CARTA
+            </button>
+
+        </section>
+
+        <!-- FIM DO JOGO -->
+        <div class="game-over" id="gameOver">
+
+            <h2 id="finalMessage">🏆 Você venceu!</h2>
+
+            <button onclick="restartGame()">
+                JOGAR NOVAMENTE
+            </button>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

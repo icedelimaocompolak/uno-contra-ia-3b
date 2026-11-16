@@ -1,0 +1,262 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #101820, #172d27);
+    color: white;
+    min-height: 100vh;
+}
+
+.header {
+    background: #101820;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #f8d448;
+}
+
+.header h1 {
+    color: #f8d448;
+    font-size: 28px;
+}
+
+.turn-info {
+    background: #f8d448;
+    color: #172d27;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.game-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+}
+
+.opponent {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.avatar {
+    width: 55px;
+    height: 55px;
+    background: #f8d448;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.player-info h2 {
+    font-size: 18px;
+}
+
+.player-info p {
+    color: #b8c8be;
+    margin-top: 5px;
+}
+
+.opponent-cards {
+    display: flex;
+    margin-left: 30px;
+}
+
+.card-back {
+    width: 65px;
+    height: 95px;
+    background: linear-gradient(135deg, #e63946, #a4161a);
+    border: 3px solid white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transform: rotate(-10deg);
+}
+
+.table {
+    min-height: 280px;
+    background: radial-gradient(circle, #27784e, #12452e);
+    border: 5px solid #a77b3b;
+    border-radius: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+    padding: 30px;
+    position: relative;
+}
+
+.deck-area {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.deck,
+.discard-area {
+    text-align: center;
+}
+
+.deck p,
+.discard-area p {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.discard-area {
+    min-width: 90px;
+}
+
+.uno-card {
+    width: 75px;
+    height: 110px;
+    border: 3px solid white;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 3px 5px 10px #0007;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.red { background: #e63946; }
+.blue { background: #2878d0; }
+.green { background: #229954; }
+.yellow { background: #f1c40f; color: #222; }
+.wild { background: linear-gradient(135deg,
+    #e63946 25%, #2878d0 25% 50%,
+    #229954 50% 75%, #f1c40f 75%);
+    color: white;
+}
+
+.game-message {
+    margin-top: 20px;
+    color: #ffe68a;
+    font-weight: bold;
+    text-align: center;
+}
+
+.player {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.player-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 15px;
+}
+
+.player-cards .uno-card:hover {
+    transform: translateY(-18px) scale(1.08);
+}
+
+.draw-button,
+.game-over button {
+    background: #f8d448;
+    color: #172d27;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.draw-button:hover,
+.game-over button:hover {
+    background: #ffe98b;
+}
+
+.color-picker {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.color-picker button {
+    width: 35px;
+    height: 35px;
+    border: 3px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 8px;
+}
+
+.color-picker .red { background: #e63946; }
+.color-picker .blue { background: #2878d0; }
+.color-picker .green { background: #229954; }
+.color-picker .yellow { background: #f1c40f; }
+
+.game-over {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #000d;
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.game-over h2 {
+    font-size: 40px;
+    color: #f8d448;
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .game-container {
+        padding: 10px;
+    }
+
+    .table {
+        border-radius: 35px;
+        min-height: 230px;
+    }
+
+    .uno-card {
+        width: 55px;
+        height: 85px;
+        font-size: 23px;
+    }
+
+    .player-cards {
+        gap: 5px;
+    }
+
+    .opponent-cards {
+        margin-left: 5px;
+    }
+}
